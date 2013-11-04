@@ -1,0 +1,10 @@
+//- http://getbootstrap.com/css/#buttons
+
+mixin btn
+    - attributes.type = attributes.type || 'button'
+    button.btn(attributes)
+        block
+
+mixin btn-default
+    +btn.btn-default(attributes=attributes)
+        block

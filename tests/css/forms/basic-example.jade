@@ -1,0 +1,24 @@
+include ../../../index
++form
+
+    +form-group
+        +label(class=null, for='exampleInputEmail1')
+            | Email Address
+        +email#exampleInputEmail1(placeholder='Enter Email')
+
+    +form-group
+        +label(class=null, for='exampleInputPassword1')
+            | Password
+        +password#exampleInputPassword1(placeholder='Password')
+
+    +form-group
+        +label(class=null, for='exampleInputFile')
+            | File input
+        +input#exampleInputFile(class=null, type='file')
+        p.help-block Example block-level help text here.
+
+    +checkbox(class=null)
+        | Check me out
+
+    +btn-default(type='submit')
+        | Submit

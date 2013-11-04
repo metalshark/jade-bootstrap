@@ -1,0 +1,14 @@
+{
+  "name": "jade-bootstrap",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metalshark/jade-bootstrap.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "load-grunt-tasks": "~0.2.0"
+  }
+}

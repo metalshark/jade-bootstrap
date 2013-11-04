@@ -1,0 +1,10 @@
+{
+    "html": {
+        "braceStyle": "collapse",
+        "indentChar": " ",
+        "indentScripts": "keep",
+        "indentSize": 2,
+        "preserveNewlines": false,
+        "wrapLineLength": 0
+    }
+}

@@ -1,0 +1,39 @@
+//- http://getbootstrap.com/css/#forms
+
+mixin checkbox()
+    - attributes.type = 'checkbox'
+    .checkbox
+        +label(class=null)
+            +input(attributes=attributes)
+            block
+
+mixin email()
+    - attributes.type = attributes.type || 'email'
+    +input(attributes=attributes)
+
+mixin file()
+    - attributes.type = attributes.type || 'file'
+    +input(attributes=attributes)
+
+mixin form()
+    - attributes.role = attributes.role || 'form'
+    form(attributes)
+        block
+
+mixin form-group()
+    .form-group(attributes=attributes)
+        block
+
+mixin input()
+    - attributes.class = attributes.class || 'form-control'
+    - attributes.type = attributes.type || 'text'
+    input(attributes)
+
+mixin label()
+    - attributes.class = attributes.class || 'control-label'
+    label(attributes)
+        block
+
+mixin password()
+    - attributes.type = attributes.type || 'password'
+    +input(attributes=attributes)
