@@ -2,23 +2,24 @@ include ../../../index
 +form
 
     +form-group
-        +label(class=null, for='exampleInputEmail1')
-            | Email Address
-        +email#exampleInputEmail1(placeholder='Enter Email')
+        +label(for='exampleInputEmail1', noControlLabel)
+            | Email address
+        +input#exampleInputEmail1(placeholder='Enter email', type='email')
 
     +form-group
-        +label(class=null, for='exampleInputPassword1')
+        +label(for='exampleInputPassword1', noControlLabel)
             | Password
-        +password#exampleInputPassword1(placeholder='Password')
+        +input#exampleInputPassword1(placeholder='Password', type='password')
 
     +form-group
-        +label(class=null, for='exampleInputFile')
+        +label(for='exampleInputFile', noControlLabel)
             | File input
-        +input#exampleInputFile(class=null, type='file')
-        p.help-block Example block-level help text here.
+        +input#exampleInputFile(type='file', noFormControl)
+        p.help-block
+            | Example block-level help text here.
 
-    +checkbox(class=null)
-        | Check me out
+    +checkbox()(noControlLabel, noFormControl)
+        |  Check me out
 
-    +btn-default(type='submit')
+    +btn(type='submit')
         | Submit

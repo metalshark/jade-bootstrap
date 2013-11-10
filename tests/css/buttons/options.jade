@@ -1,0 +1,28 @@
+include ../../../index
+// Standard button
++btn
+    | Default
+
+// Provides extra visual weight and identifies the primary action in a set of buttons
++btn()(primary)
+    | Primary
+
+// Indicates a successful or positive action
++btn()(success)
+    | Success
+
+// Contextual button for informational alert messages
++btn()(info)
+    | Info
+
+// Indicates caution should be taken with this action
++btn()(warning)
+    | Warning
+
+// Indicates a dangerous or potentially negative action
++btn()(danger)
+    | Danger
+
+// Deemphasize a button by making it look like a link while maintaining button behavior
++btn()(link)
+    | Link

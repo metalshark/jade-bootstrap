@@ -1,0 +1,7 @@
+//- http://getbootstrap.com/css/#overview-doctype
+
+mixin doctype
+    - attributes.lang = attributes.lang || 'en'
+    doctype html
+    html(attributes=attributes)
+        block

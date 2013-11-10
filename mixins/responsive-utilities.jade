@@ -1,0 +1,14 @@
+//- http://getbootstrap.com/css/#responsive-utilities
+
+- function _responsiveMeta(attributes) {
+-     var RESPONSIVESTATES = ['visible', 'hidden']
+-     var RESPONSIVESIZES = ['xs', 'sm', 'md', 'lg']
+-     for (var i = 0; i != RESPONSIVESTATES.length; i++) {
+-         state = RESPONSIVESTATES[i]
+-         _addClassAttribute(state + '-print', state + '-print', attributes)
+-         for (var s = 0; s != RESPONSIVESIZES.length; s++) {
+-             size = RESPONSIVESIZES[i]
+-             _addClassAttribute(state + '-' + size, state + '-' + size, attributes)
+-         }
+-     }
+- }

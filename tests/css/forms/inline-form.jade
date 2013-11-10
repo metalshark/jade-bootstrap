@@ -1,0 +1,18 @@
+include ../../../index
++form()(inline)
+
+    +form-group
+        +label(for='exampleInputEmail2', inline, noControlLabel)
+            | Email address
+        +input#exampleInputEmail2(placeholder='Enter email', type='email')
+
+    +form-group
+        +label(for='exampleInputPassword2', inline, noControlLabel)
+            | Password
+        +input#exampleInputPassword2(placeholder='Password', type='password')
+
+    +checkbox()(noControlLabel, noFormControl)
+        |  Remember me
+
+    +btn(type='submit')
+        | Sign in

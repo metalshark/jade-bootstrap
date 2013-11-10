@@ -1,0 +1,17 @@
+include ../../../index
++form
+    fieldset(disabled)
+        +form-group
+            +label(for='disabledTextInput', noControlLabel)
+                | Disabled input
+            +input#disabledTextInput(placeholder='Disabled input')
+        +form-group
+            +label(for='disabledSelect', noControlLabel)
+                | Disabled select menu
+            +select#disabledSelect
+                option
+                    | Disabled select
+        +checkbox()(noControlLabel, noFormControl)
+            | Can't check this
+        +btn(type='submit', primary)
+            | Submit

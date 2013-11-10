@@ -1,0 +1,13 @@
+include ../../../index
++form()(horizontal)
+    +form-group
+        +label.col-sm-2
+            | Email
+        .col-sm-10
+            +form-static
+                | email@example.com
+    +form-group
+        +label.col-sm-2(for='inputPassword')
+            | Password
+        .col-sm-10
+            +input()(id='inputPassword', placeholder='Password', type='password')

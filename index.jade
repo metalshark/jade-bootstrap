@@ -1,3 +1,31 @@
-//- Brings all of the mixin includes together into one file
+//- Brings all of the mixin includes together into one file with their helpers
+
+//- Imports
 include mixins/buttons
+include mixins/code
+include mixins/containers
+include mixins/doctypes
 include mixins/forms
+include mixins/grid-system
+include mixins/helper-classes
+include mixins/images
+include mixins/responsive-images
+include mixins/responsive-utilities
+include mixins/tables
+include mixins/typography
+include mixins/viewports
+
+//- Helpers
+- function _addClassAttribute(name, classes, attributes) {
+-     if (attributes[name]) {
+-         attributes.class = (attributes.class === undefined) ? classes : attributes.class + ' ' + classes
+-         attributes[name] = null
+-     }
+- }
+- function _unlessClassAttribute(name, classes, attributes) {
+-     if (attributes[name]) {
+-         attributes[name] = null
+-     } else {
+-         attributes.class = (attributes.class === undefined) ? classes : attributes.class + ' ' + classes
+-     }
+- }

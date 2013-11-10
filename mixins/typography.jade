@@ -1,0 +1,185 @@
+//- http://getbootstrap.com/css/#type
+
+- function _descriptionMeta(attributes) {
+-     _addClassAttribute('horizontal', 'dl-horizontal', attributes)
+- }
+
+- function _headingMeta(attributes) {
+-     _addClassAttribute('text-hide', 'text-hide', attributes)
+- }
+
+- function _listMeta(attributes) {
+-     _addClassAttribute('inline', 'list-inline', attributes)
+-     _addClassAttribute('unstyled', 'list-unstyled', attributes)
+- }
+
+- function _textAlignment(attributes) {
+-     if (attributes.left) {
+-         _addClassAttribute('left', 'text-left', attributes)
+-     } else if (attributes.center) {
+-         _addClassAttribute('center', 'text-center', attributes)
+-     } else if (attributes.right) {
+-         _addClassAttribute('right', 'text-right', attributes)
+-     }
+//- Sanity check
+-     if (attributes.left || attributes.center || attributes.right) {
+-         throw new Error('You can only choose one text alignment at a time.')
+-     }
+- }
+
+- function _textEmphasis(attributes) {
+-     if (attributes.muted) {
+-         _addClassAttribute('muted', 'text-muted', attributes)
+-     } else if (attributes.primary) {
+-         _addClassAttribute('primary', 'text-primary', attributes)
+-     } else if (attributes.success) {
+-         _addClassAttribute('success', 'text-success', attributes)
+-     } else if (attributes.info) {
+-         _addClassAttribute('info', 'text-info', attributes)
+-     } else if (attributes.warning) {
+-         _addClassAttribute('warning', 'text-warning', attributes)
+-     } else if (attributes.danger) {
+-         _addClassAttribute('danger', 'text-danger', attributes)
+-     }
+//- Sanity check
+-     if (attributes.muted || attributes.primary || attributes.success || attributes.info || attributes.warning || attributes.danger) {
+-         throw new Error('You can only choose one emphasis at a time.')
+-     }
+- }
+
+- function _textPull(attributes) {
+-     if (attributes['pull-left']) {
+-         _addClassAttribute('pull-left', 'pull-left', attributes)
+-     } else if (attributes['pull-right']) {
+-         _addClassAttribute('pull-right', 'pull-right', attributes)
+-     }
+//- Sanity check
+-     if (attributes['pull-left'] || attributes['pull-right']) {
+-         throw new Error('You can only pull in one direction at a time.')
+-     }
+- }
+
+- function _textMeta(attributes) {
+-     _textAlignment(attributes)
+-     _textEmphasis(attributes)
+-     _textPull(attributes)
+- }
+
+mixin a
+    - _textMeta(attributes)
+    a(attributes=attributes)
+        block
+
+mixin abbr
+    - _textMeta(attributes)
+    - _addClassAttribute('initialism', 'initialism', attributes)
+    abbr(attributes=attributes)
+        block
+
+mixin address
+    - _textMeta(attributes)
+    address(attributes=attributes)
+        block
+
+mixin blockquote
+    - _textMeta(attributes)
+    blockquote(attributes=attributes)
+        block
+
+mixin br
+    - _textMeta(attributes)
+    br(attributes=attributes)
+
+mixin cite
+    - _textMeta(attributes)
+    cite(attributes=attributes)
+        block
+
+mixin dd
+    dd(attributes=attributes)
+        block
+
+mixin dl
+    - _descriptionMeta(attributes)
+    dl(attributes=attributes)
+        block
+
+mixin dt
+    dt(attributes=attributes)
+        block
+
+mixin em
+    - _textMeta(attributes)
+    em(attributes=attributes)
+        block
+
+mixin h1
+    - _textMeta(attributes)
+    - _headingMeta(attributes)
+    h1(attributes=attributes)
+        block
+
+mixin h2
+    - _textMeta(attributes)
+    - _headingMeta(attributes)
+    h2(attributes=attributes)
+        block
+
+mixin h3
+    - _textMeta(attributes)
+    - _headingMeta(attributes)
+    h3(attributes=attributes)
+        block
+
+mixin h4
+    - _textMeta(attributes)
+    - _headingMeta(attributes)
+    h4(attributes=attributes)
+        block
+
+mixin h5
+    - _textMeta(attributes)
+    - _headingMeta(attributes)
+    h5(attributes=attributes)
+        block
+
+mixin h6
+    - _textMeta(attributes)
+    - _headingMeta(attributes)
+    h6(attributes=attributes)
+        block
+
+mixin lead
+    - _textMeta(attributes)
+    - attributes.class = (attributes.class === undefined) ? 'lead' : attributes.class + ' ' + 'lead'
+    +p(attributes=attributes)
+        block
+
+mixin li
+    li(attributes=attributes)
+        block
+
+mixin ol
+    - _listMeta(attributes)
+    ol(attributes=attributes)
+        block
+
+mixin p
+    - _textMeta(attributes)
+    p(attributes=attributes)
+        block
+
+mixin small
+    - _textMeta(attributes)
+    small(attributes=attributes)
+        block
+
+mixin strong
+    - _textMeta(attributes)
+    strong(attributes=attributes)
+        block
+
+mixin ul
+    - _listMeta(attributes)
+    ul(attributes=attributes)
+        block

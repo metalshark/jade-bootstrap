@@ -1,0 +1,47 @@
+//- http://getbootstrap.com/css/#tables
+
+- function _contextualMeta(attributes) {
+-     if (attributes.active) {
+-         _addClassAttribute('active', 'active', attributes)
+-     } else if (attributes.success) {
+-         _addClassAttribute('success', 'success', attributes)
+-     } else if (attributes.warning) {
+-         _addClassAttribute('warning', 'warning', attributes)
+-     } else if (attributes.danger) {
+-         _addClassAttribute('danger', 'danger', attributes)
+-     }
+//- Sanity check
+-     if (attributes.active || attributes.success || attributes.warning || attributes.danger) {
+-         throw new Error('You can only choose one contextual class at a time.')
+-     }
+- }
+
+mixin table
+    - _addClassAttribute('bordered', 'table-bordered', attributes)
+    - _addClassAttribute('condensed', 'table-condensed', attributes)
+    - _addClassAttribute('hover', 'table-hover', attributes)
+    - _addClassAttribute('striped', 'table-striped', attributes)
+    - if (attributes.responsive) {
+        - attributes.responsive = null
+        .table-responsive
+            table.table(attributes=attributes)
+                block
+    - } else {
+        table.table(attributes=attributes)
+            block
+    - }
+
+mixin td
+    - _contextualMeta(attributes)
+    td(attributes=attributes)
+        block
+
+mixin th
+    - _contextualMeta(attributes)
+    th(attributes=attributes)
+        block
+
+mixin tr
+    - _contextualMeta(attributes)
+    tr(attributes=attributes)
+        block

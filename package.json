@@ -7,8 +7,12 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
+    "grunt-coffeelint": "~0.0.7",
     "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-jshint": "~0.7.1",
     "grunt-contrib-watch": "~0.5.2",
-    "load-grunt-tasks": "~0.2.0"
+    "grunt-html5compare": ">=0.1.1",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-contrib-coffee": "~0.7.0"
   }
 }

@@ -1,10 +1,67 @@
 //- http://getbootstrap.com/css/#buttons
 
-mixin btn
-    - attributes.type = attributes.type || 'button'
-    button.btn(attributes)
+//- Sets the button option, such as primary or warning
+- function _btnOption(attributes) {
+-     if (attributes.primary) {
+-         _addClassAttribute('primary', 'btn-primary', attributes)
+-     } else if (attributes.success) {
+-         _addClassAttribute('success', 'btn-success', attributes)
+-     } else if (attributes.info) {
+-         _addClassAttribute('info', 'btn-info', attributes)
+-     } else if (attributes.warning) {
+-         _addClassAttribute('warning', 'btn-warning', attributes)
+-     } else if (attributes.danger) {
+-         _addClassAttribute('danger', 'btn-danger', attributes)
+-     } else if (attributes.link) {
+-         _addClassAttribute('link', 'btn-link', attributes)
+-     } else {
+-         attributes.default = true
+-         _addClassAttribute('default', 'btn-default', attributes)
+-     }
+//- Sanity check
+-     if (attributes.default || attributes.primary || attributes.success || attributes.info || attributes.warning || attributes.danger || attributes.link) {
+-         throw new Error('You can only choose one button option at a time.')
+-     }
+- }
+
+//- Sets the button size, such as lg or sm
+- function _btnSize(attributes) {
+-     if (attributes.lg) {
+-         _addClassAttribute('lg', 'btn-lg', attributes)
+-     } else if (attributes.sm) {
+-         _addClassAttribute('sm', 'btn-sm', attributes)
+-     } else if (attributes.xs) {
+-         _addClassAttribute('xs', 'btn-xs', attributes)
+-     }
+//- Sanity check
+-     if (attributes.lg || attributes.sm || attributes.xs) {
+-         throw new Error('You can only choose one button size at a time.')
+-     }
+- }
+
+//- Sets all button attributes, whilst performing sanity checks
+- function _btnMeta(attributes) {
+-     _addClassAttribute('active', 'active', attributes)
+-     _addClassAttribute('block', 'btn-block', attributes)
+-     _btnOption(attributes)
+-     _btnSize(attributes)
+- }
+
+mixin abtn
+    - _btnMeta(attributes)
+    - _addClassAttribute('disabled', 'disabled', attributes)
+    - attributes.href = attributes.href || '#'
+    - attributes.role = attributes.role || 'button'
+    a.btn(attributes=attributes)
         block
 
-mixin btn-default
-    +btn.btn-default(attributes=attributes)
+mixin btn
+    - _btnMeta(attributes)
+    - attributes.type = attributes.type || 'button'
+    button.btn(attributes=attributes)
         block
+
+mixin ibtn
+    - _btnMeta(attributes)
+    - attributes.type = attributes.type || 'button'
+    input.btn(attributes=attributes)

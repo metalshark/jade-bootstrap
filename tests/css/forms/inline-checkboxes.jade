@@ -1,0 +1,5 @@
+include ../../../index
+- for (var i = 1; i <= 3; i++) {
+    +checkbox-inline(id='inlineCheckbox' + i, value='option' + i, noControlLabel, noFormControl)
+        = i
+- }
