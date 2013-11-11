@@ -4,11 +4,9 @@
 -     var COLSIZES = ['xs', 'sm', 'md', 'lg']
 -     for (var s = 0; s != COLSIZES.length; s++) {
 -         var size = COLSIZES[s]
--         for (var i = 0; i <= 11; i++) {
--             _addClassAttribute(size + '-offset-' + i, 'col-' + size + '-offset-' + i, attributes)
--         }
--         for (var i = 1; i <= 12; i++) {
+-         for (var i = 0; i <= 12; i++) {
 -             _addClassAttribute(size + '-' + i, 'col-' + size + '-' + i, attributes)
+-             _addClassAttribute(size + '-offset-' + i, 'col-' + size + '-offset-' + i, attributes)
 -             _addClassAttribute(size + '-pull-' + i, 'col-' + size + '-pull-' + i, attributes)
 -             _addClassAttribute(size + '-push-' + i, 'col-' + size + '-push-' + i, attributes)
 -         }
