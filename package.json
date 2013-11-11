@@ -20,7 +20,7 @@
             "url": "https://github.com/metalshark/jade-bootstrap/blob/master/LICENSE"
         }
     ],
-    "main": "index.jade",
+    "main": "Gruntfile.coffee",
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-coffeelint": "~0.0.7",
