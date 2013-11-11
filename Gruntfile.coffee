@@ -92,8 +92,7 @@ module.exports = (grunt) ->
         'coffeelint'
         'coffee'
         'jshint'
-        'jade:tests'
-        'html5compare:tests'
+        'test'
     ]
 
     grunt.registerTask 'dev', [
@@ -102,4 +101,9 @@ module.exports = (grunt) ->
         'jshint'
         'jade:tests'
         'watch:jade'
+    ]
+
+    grunt.registerTask 'test', [
+        'jade:tests'
+        'html5compare:tests'
     ]

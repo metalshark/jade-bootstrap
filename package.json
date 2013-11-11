@@ -21,6 +21,12 @@
         }
     ],
     "main": "Gruntfile.coffee",
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "scripts": {
+        "test": "grunt test"
+    },
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-coffeelint": "~0.0.7",
