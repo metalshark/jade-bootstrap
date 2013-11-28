@@ -9,6 +9,13 @@
 
 - function _inputMeta (attributes) {
 -     _unlessClassAttribute('noFormControl', 'form-control', attributes)
+-     if (attributes.lg) {
+-         _addClassAttribute('lg', 'input-lg', attributes)
+-     } else if (attributes.sm) {
+-         _addClassAttribute('sm', 'input-sm', attributes)
+-     } else if (attributes.xs) {
+-         _addClassAttribute('xs', 'input-xs', attributes)
+-     }
 -}
 
 mixin checkbox
@@ -49,6 +56,7 @@ mixin input
 mixin label
     - _unlessClassAttribute('noControlLabel', 'control-label', attributes)
     - _addClassAttribute('inline', 'sr-only', attributes)
+    - _colMeta(attributes)
     label(attributes=attributes)
         block
 

@@ -1,0 +1,242 @@
+include ../../../index
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(content='IE=edge', http-equiv='X-UA-Compatible')
+        +viewport
+        meta(content='', name='description')
+        meta(content='', name='author')
+        link(href='../../docs-assets/ico/favicon.png', rel='shortcut icon')
+
+        title
+            | Carousel Template for Bootstrap
+
+        // Bootstrap core CSS
+        link(href='../../dist/css/bootstrap.css', rel='stylesheet')
+
+        // Just for debugging purposes. Don't actually copy this line!
+        // if lt IE 9
+            script(src='../../docs-assets/js/ie8-responsive-file-warning.js')
+
+        // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+        // if lt IE 9
+            script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+            script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+
+        // Custom styles for this template
+        link(href='carousel.css', rel='stylesheet')
+
+    //
+        | NAVBAR
+        | ==================================================
+
+    body
+
+        +navbar-wrapper
+            +container
+                +navbar()(inverse, static-top)
+                    +container
+                        +navbar-header
+                            +navbar-toggle
+                            +navbar-brand
+                                | Project name
+                        +navbar-collapse
+                            +nav
+                                +li()(active)
+                                    +a
+                                        | Home
+                                +li
+                                    +a(href='#about')
+                                        | About
+                                +li
+                                    +a(href='#contact')
+                                        | Contact
+                                +dropdown
+                                    +dropdown-toggle
+                                        | Dropdown
+                                        +b()(caret)
+                                    +dropdown-menu
+                                        +li
+                                            +a
+                                                | Action
+                                        +li
+                                            +a
+                                                | Another action
+                                        +li
+                                            +a
+                                                | Something else here
+                                        +divider
+                                        +dropdown-header
+                                            | Nav header
+                                        +li
+                                            +a
+                                                | Separated link
+                                        +li
+                                            +a
+                                                | One more separated link
+
+        //
+            | Carousel
+            | ==================================================
+        +carousel#myCarousel(count=3, glyphiconLeft='chevron-left', glyphiconRight='chevron-right')
+            +carousel-item()(active)
+                +img(alt='First slide', data-src='holder.js/900x500/auto/#777:#7a7a7a/text:First slide')
+                +container
+                    +carousel-caption
+                        +h1
+                            | Example headline.
+                        +p
+                            | Note: If you're viewing this page via a
+                            +code
+                                | file://
+                            | URL, the "next" and "previous" Glyphicon buttons
+                            | on the left and right might not load/display properly
+                            | due to web browser security rules.
+                        +p
+                            +abtn()(lg, primary)
+                                | Sign up today
+            +carousel-item
+                +img(alt='Second slide', data-src='holder.js/900x500/auto/#666:#6a6a6a/text:Second slide')
+                +container
+                    +carousel-caption
+                        +h1
+                            | Another example headline.
+                        +p
+                            | Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                            | Donec id elit non mi porta gravida at eget metus.
+                            | Nullam id dolor id nibh ultricies vehicula ut id elit.
+                        +p
+                            +abtn()(lg, primary)
+                                | Learn more
+            +carousel-item
+                +img(alt='Third slide', data-src='holder.js/900x500/auto/#555:#5a5a5a/text:Third slide')
+                +container
+                    +carousel-caption
+                        +h1
+                            | One more for good measure.
+                        +p
+                            | Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                            | Donec id elit non mi porta gravida at eget metus.
+                            | Nullam id dolor id nibh ultricies vehicula ut id elit.
+                        +p
+                            +abtn()(lg, primary)
+                                | Browse gallery
+        // /.carousel
+
+        //
+            | Marketing messaging and featurettes
+            | ==================================================
+        // Wrap the rest of the page in another container to center all the content.
+        +container.marketing
+            // Three columns of text below the carousel
+            +row
+                +col()(lg-4)
+                    +img-circle(alt='Generic placeholder image', data-src='holder.js/140x140')
+                    +h2
+                        | Heading
+                    +p
+                        | Donec sed odio dui.
+                        | Etiam porta sem malesuada magna mollis euismod.
+                        | Nullam id dolor id nibh ultricies vehicula ut id elit.
+                        | Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                        | Praesent commodo cursus magna.
+                    +p
+                        +abtn
+                            | View details &raquo;
+                // /.col-lg-4
+                +col()(lg-4)
+                    +img-circle(alt='Generic placeholder image', data-src='holder.js/140x140')
+                    +h2
+                        | Heading
+                    +p
+                        | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                        | Cras mattis consectetur purus sit amet fermentum.
+                        | Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                    +p
+                        +abtn
+                            | View details &raquo;
+                // /.col-lg-4
+                +col()(lg-4)
+                    +img-circle(alt='Generic placeholder image', data-src='holder.js/140x140')
+                    +h2
+                        | Heading
+                    +p
+                        | Donec sed odio dui.
+                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                        | Vestibulum id ligula porta felis euismod semper.
+                        | Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                    +p
+                        +abtn
+                            | View details &raquo;
+                // /.col-lg-4
+            // /.row
+
+            // START THE FEATURETTES
+            +hr.featurette-divider
+            +row.featurette
+                +col()(md-7)
+                    +h2.featurette-heading
+                        | First featurette heading.
+                        +span()(muted)
+                            | It'll blow your mind.
+                    +p()(lead)
+                        | Donec ullamcorper nulla non metus auctor fringilla.
+                        | Vestibulum id ligula porta felis euismod semper.
+                        | Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        | Fusce dapibus, tellus ac cursus commodo.
+                +col()(md-5)
+                    +img.featurette-image(alt='Generic placeholder image', data-src='holder.js/500x500/auto', responsive)
+            +hr.featurette-divider
+            +row.featurette
+                +col()(md-5)
+                    +img.featurette-image(alt='Generic placeholder image', data-src='holder.js/500x500/auto', responsive)
+                +col()(md-7)
+                    +h2.featurette-heading
+                        | Oh yeah, it's that good.
+                        +span()(muted)
+                            | See for yourself.
+                    +p()(lead)
+                        | Donec ullamcorper nulla non metus auctor fringilla.
+                        | Vestibulum id ligula porta felis euismod semper.
+                        | Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        | Fusce dapibus, tellus ac cursus commodo.
+            +hr.featurette-divider
+            +row.featurette
+                +col()(md-7)
+                    +h2.featurette-heading
+                        | And lastly, this one.
+                        +span()(muted)
+                            | Checkmate.
+                    +p()(lead)
+                        | Donec ullamcorper nulla non metus auctor fringilla.
+                        | Vestibulum id ligula porta felis euismod semper.
+                        | Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        | Fusce dapibus, tellus ac cursus commodo.
+                +col()(md-5)
+                    +img.featurette-image(alt='Generic placeholder image', data-src='holder.js/500x500/auto', responsive)
+            +hr.featurette-divider
+            // /END THE FEATURETTES
+
+            // FOOTER
+            +footer
+                +p()(pull-right)
+                    +a
+                        | Back to top
+                +p
+                    | &copy; 2013 Company, Inc. &middot;
+                    +a
+                        | Privacy
+                    | &middot;
+                    +a
+                        | Terms
+
+        // ./container
+
+        //
+            | Bootstrap core JavaScript
+            | ==================================================
+        // Placed at the end of the document so the pages load faster
+        script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+        script(src='../../dist/js/bootstrap.min.js')
+        script(src='../../docs-assets/js/holder.js')

@@ -54,6 +54,11 @@
 -     _btnSize(attributes)
 - }
 
+mixin button
+    - attributes.type = attributes.type || 'button'
+    button(attributes=attributes)
+        block
+
 mixin abtn
     - _btnMeta(attributes)
     - _addClassAttribute('disabled', 'disabled', attributes)
@@ -65,7 +70,7 @@ mixin abtn
 mixin btn
     - _btnMeta(attributes)
     - attributes.type = attributes.type || 'button'
-    button.btn(attributes=attributes)
+    +button.btn(attributes=attributes)
         block
 
 mixin ibtn

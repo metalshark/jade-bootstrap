@@ -1,0 +1,93 @@
+//-
+    jade-bootstrap
+    https://github.com/metalshark/jade-bootstrap
+
+    Copyright (c) 2013 'Metalshark' Beech Horn
+    Licensed under the LGPL v3 license.
+
+//- http://getbootstrap.com/components/#navbar
+
+//- Sets the navbar option, such as default or inverse
+- function _navbarOption(attributes) {
+-     if (attributes.inverse) {
+-         _addClassAttribute('inverse', 'navbar-inverse', attributes)
+-     } else {
+-         attributes.default = true
+-         _addClassAttribute('default', 'navbar-default', attributes)
+-     }
+//- Sanity check
+-     if (attributes.default || attributes.inverse) {
+-         throw new Error('You can only choose one navbar option at a time.')
+-     }
+- }
+
+//- Sets the navbar position, such as fixed-top or static-top
+- function _navbarPosition(attributes) {
+-     if (attributes['fixed-top']) {
+-         _addClassAttribute('fixed-top', 'navbar-fixed-top', attributes)
+-     } else if (attributes['static-top']) {
+-         _addClassAttribute('static-top', 'navbar-static-top', attributes)
+-     }
+//- Sanity check
+-     if (attributes.fixed-top || attributes.static-top) {
+-         throw new Error('You can only choose one navbar position at a time.')
+-     }
+- }
+
+mixin divider
+    +li.divider(attributes=attributes)
+        block
+
+mixin dropdown
+    +li.dropdown(attributes=attributes)
+        block
+
+mixin dropdown-header
+    +li.dropdown-header(attributes=attributes)
+        block
+
+mixin dropdown-menu
+    +ul.dropdown-menu
+        block
+
+mixin dropdown-toggle
+    - attributes['data-toggle'] = attributes['data-toggle'] || 'dropdown'
+    +a.dropdown-toggle(attributes=attributes)
+        block
+
+mixin icon-bar
+    +span.icon-bar(attributes=attributes)
+        block
+
+mixin navbar
+    - _navbarOption(attributes)
+    - _navbarPosition(attributes)
+    - attributes.role = attributes.role || 'navigation'
+    .navbar(attributes=attributes)
+        block
+
+mixin navbar-brand
+    +a.navbar-brand(attributes=attributes)
+        block
+
+mixin navbar-collapse
+    +div.collapse.navbar-collapse
+        block
+
+mixin navbar-header
+    .navbar-header
+        block
+
+mixin navbar-toggle
+    - attributes['data-target'] = attributes['data-target'] || '.navbar-collapse'
+    - attributes['data-toggle'] = attributes['data-toggle'] || 'collapse'
+    +button.navbar-toggle(attributes=attributes)
+        +span()(sr-only)
+            | Toggle navigation
+        +icon-bar
+        +icon-bar
+        +icon-bar
+
+mixin navbar-wrapper
+    +div.navbar-wrapper
+        block

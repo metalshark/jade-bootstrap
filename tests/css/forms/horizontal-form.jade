@@ -2,23 +2,23 @@ include ../../../index
 +form()(horizontal)
 
     +form-group
-        +label.col-sm-2(for='inputEmail3')
+        +label(for='inputEmail3', sm-2)
             | Email
-        .col-sm-10
+        +col()(sm-10)
             +input#inputEmail3(placeholder='Email', type='email')
 
     +form-group
-        +label.col-sm-2(for='inputPassword3')
+        +label(for='inputPassword3', sm-2)
             | Password
-        .col-sm-10
+        +col()(sm-10)
             +input#inputPassword3(placeholder='Password', type='password')
 
     +form-group
-        .col-sm-offset-2.col-sm-10
+        +col()(sm-offset-2, sm-10)
             +checkbox()(noControlLabel, noFormControl)
                 |  Remember me
 
     +form-group
-        .col-sm-offset-2.col-sm-10
+        +col()(sm-offset-2, sm-10)
             +btn(type='submit')
                 | Sign in

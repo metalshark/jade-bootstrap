@@ -15,6 +15,10 @@
 -     _addClassAttribute('text-hide', 'text-hide', attributes)
 - }
 
+- function _itemMeta(attributes) {
+-     _addClassAttribute('active', 'active', attributes)
+- }
+
 - function _listMeta(attributes) {
 -     _addClassAttribute('inline', 'list-inline', attributes)
 -     _addClassAttribute('unstyled', 'list-unstyled', attributes)
@@ -32,6 +36,10 @@
 -     if (attributes.left || attributes.center || attributes.right) {
 -         throw new Error('You can only choose one text alignment at a time.')
 -     }
+- }
+
+- function _textCaret(attributes) {
+-     _addClassAttribute('caret', 'caret', attributes)
 - }
 
 - function _textEmphasis(attributes) {
@@ -66,14 +74,22 @@
 -     }
 - }
 
+- function _textScreenReaderOnly(attributes) {
+-     _addClassAttribute('sr-only', 'sr-only', attributes)
+- }
+
 - function _textMeta(attributes) {
 -     _textAlignment(attributes)
+-     _textCaret(attributes)
 -     _textEmphasis(attributes)
 -     _textPull(attributes)
+-     _textScreenReaderOnly(attributes)
+-     _addClassAttribute('lead', 'lead', attributes)
 - }
 
 mixin a
     - _textMeta(attributes)
+    - attributes.href = attributes.href || '#'
     a(attributes=attributes)
         block
 
@@ -93,8 +109,11 @@ mixin blockquote
     blockquote(attributes=attributes)
         block
 
-mixin br
+mixin b
     - _textMeta(attributes)
+    b(attributes=attributes)
+
+mixin br
     br(attributes=attributes)
 
 mixin cite
@@ -104,6 +123,12 @@ mixin cite
 
 mixin dd
     dd(attributes=attributes)
+        block
+
+mixin div
+    - _itemMeta(attributes)
+    - _textMeta(attributes)
+    div(attributes=attributes)
         block
 
 mixin dl
@@ -118,6 +143,10 @@ mixin dt
 mixin em
     - _textMeta(attributes)
     em(attributes=attributes)
+        block
+
+mixin footer
+    footer(attributes=attributes)
         block
 
 mixin h1
@@ -156,6 +185,10 @@ mixin h6
     h6(attributes=attributes)
         block
 
+mixin hr
+    hr(attributes=attributes)
+        block
+
 mixin lead
     - _textMeta(attributes)
     - attributes.class = (attributes.class === undefined) ? 'lead' : attributes.class + ' ' + 'lead'
@@ -163,6 +196,7 @@ mixin lead
         block
 
 mixin li
+    - _itemMeta(attributes)
     li(attributes=attributes)
         block
 
@@ -179,6 +213,11 @@ mixin p
 mixin small
     - _textMeta(attributes)
     small(attributes=attributes)
+        block
+
+mixin span
+    - _textMeta(attributes)
+    span(attributes=attributes)
         block
 
 mixin strong

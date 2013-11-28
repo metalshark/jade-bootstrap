@@ -9,6 +9,7 @@
 
 //- Imports
 include mixins/buttons
+include mixins/carousel
 include mixins/code
 include mixins/containers
 include mixins/doctypes
@@ -16,6 +17,8 @@ include mixins/forms
 include mixins/grid-system
 include mixins/helper-classes
 include mixins/images
+include mixins/navbar
+include mixins/navs
 include mixins/responsive-images
 include mixins/responsive-utilities
 include mixins/tables
@@ -23,9 +26,12 @@ include mixins/typography
 include mixins/viewports
 
 //- Helpers
+- function _addClass(classes, attributes) {
+-     attributes.class = (attributes.class === undefined) ? classes : attributes.class + ' ' + classes
+-}
 - function _addClassAttribute(name, classes, attributes) {
 -     if (attributes[name]) {
--         attributes.class = (attributes.class === undefined) ? classes : attributes.class + ' ' + classes
+-         _addClass(classes, attributes)
 -         attributes[name] = null
 -     }
 - }
@@ -33,6 +39,6 @@ include mixins/viewports
 -     if (attributes[name]) {
 -         attributes[name] = null
 -     } else {
--         attributes.class = (attributes.class === undefined) ? classes : attributes.class + ' ' + classes
+-         _addClass(classes, attributes)
 -     }
 - }

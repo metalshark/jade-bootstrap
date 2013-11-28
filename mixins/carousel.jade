@@ -1,0 +1,65 @@
+//-
+    jade-bootstrap
+    https://github.com/metalshark/jade-bootstrap
+
+    Copyright (c) 2013 'Metalshark' Beech Horn
+    Licensed under the LGPL v3 license.
+
+//- http://getbootstrap.com/javascript/#carousel
+
+mixin carousel
+    - attributes['data-ride'] = attributes['data-ride'] = 'carousel'
+    - count = attributes.count
+    - attributes.count = null
+
+    //- active is optional, defaults to 0 (the first slide)
+    - if (attributes.active !== undefined) {
+    -     active = attributes.active
+    -     attributes.active = null
+    - } else {
+    -     active = 0
+    - }
+
+    - glyphiconLeft = attributes.glyphiconLeft
+    - glyphiconRight = attributes.glyphiconRight
+    - attributes.glyphiconLeft = null
+    - attributes.glyphiconRight = null
+
+    +div.carousel.slide(attributes)
+
+        // Indicators
+        +ol.carousel-indicators
+            - for (var i = 0; i < count; ++i) {
+                li(
+                    class=i == active ? 'active' : '',
+                    data-slide-to=i.toString(),
+                    data-target='#' + attributes.id
+                )
+            - }
+
+        //- Wrapper for slides
+        +div.carousel-inner
+            block
+
+        //- Controls
+        +a.left.carousel-control(data-slide='prev', href='#' + attributes.id)
+            - if (glyphiconLeft) {
+                +span(class='glyphicon glyphicon-' + glyphiconLeft)
+            - } else {
+                +span.icon-prev
+            - }
+        +a.right.carousel-control(data-slide='next', href='#' + attributes.id)
+            - if (glyphiconRight) {
+                +span(class='glyphicon glyphicon-' + glyphiconRight)
+            - } else {
+                +span.icon-prev
+            - }
+
+mixin carousel-caption
+    - _addClassAttribute('active', 'active', attributes)
+    +div.carousel-caption(attributes=attributes)
+        block
+
+mixin carousel-item
+    +div.item(attributes=attributes)
+        block

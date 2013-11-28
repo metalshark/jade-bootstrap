@@ -1,43 +1,45 @@
 {
-    "name": "jade-bootstrap",
-    "description": "Jade mixins for creating bootstrap markup.",
-    "version": "0.0.0",
-    "homepage": "https://github.com/metalshark/jade-bootstrap",
-    "author": {
-        "name": "\"Metalshark\" Beech Horn",
-        "url": "http://beechhorn.com/"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/metalshark/jade-bootstrap.git"
-    },
-    "bugs": {
-        "url": "https://github.com/metalshark/jade-bootstrap/issues"
-    },
-    "licenses": [
-        {
-            "type": "LGPL v3",
-            "url": "https://github.com/metalshark/jade-bootstrap/blob/master/LICENSE"
-        }
-    ],
-    "main": "Gruntfile.coffee",
-    "engines": {
-        "node": ">= 0.8.0"
-    },
-    "scripts": {
-        "test": "grunt test"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-coffeelint": "~0.0.7",
-        "grunt-contrib-coffee": "~0.7.0",
-        "grunt-contrib-jade": "~0.8.0",
-        "grunt-contrib-jshint": "~0.7.1",
-        "grunt-contrib-watch": "~0.5.2",
-        "grunt-html5compare": ">=0.1.2",
-        "load-grunt-tasks": "~0.2.0"
-    },
-    "keywords": [
-        "jade bootstrap jadebootstrap bootstrapjade"
-    ]
+  "name": "jade-bootstrap",
+  "description": "Jade mixins for creating bootstrap markup.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/metalshark/jade-bootstrap",
+  "author": {
+    "name": "\"Metalshark\" Beech Horn",
+    "url": "http://beechhorn.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metalshark/jade-bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/metalshark/jade-bootstrap/issues"
+  },
+  "licenses": [
+    {
+      "type": "LGPL v3",
+      "url": "https://github.com/metalshark/jade-bootstrap/blob/master/LICENSE"
+    }
+  ],
+  "main": "Gruntfile.coffee",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-coffeelint": "~0.0.7",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt-html5compare": ">=0.1.6",
+    "grunt-newer": "~0.6.0",
+    "load-grunt-tasks": "~0.2.0"
+  },
+  "keywords": [
+    "jade bootstrap jadebootstrap bootstrapjade"
+  ]
 }

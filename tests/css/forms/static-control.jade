@@ -1,13 +1,13 @@
 include ../../../index
 +form()(horizontal)
     +form-group
-        +label.col-sm-2
+        +label()(sm-2)
             | Email
-        .col-sm-10
+        +col()(sm-10)
             +form-static
                 | email@example.com
     +form-group
-        +label.col-sm-2(for='inputPassword')
+        +label(for='inputPassword', sm-2)
             | Password
-        .col-sm-10
+        +col()(sm-10)
             +input()(id='inputPassword', placeholder='Password', type='password')

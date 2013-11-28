@@ -23,6 +23,13 @@ module.exports = (grunt) ->
             temp: '.tmp'
             tests: 'tests'
 
+        # grunt-contrib-clean: https://github.com/gruntjs/grunt-contrib-clean
+        # Clear files and folders.
+        clean:
+            temp:
+                dot: true
+                src: '<%= jadeStylus.temp %>'
+
         # grunt-contrib-coffee: https://github.com/gruntjs/grunt-contrib-coffee
         # Compile CoffeeScript files to JavaScript.
         coffee:
@@ -47,6 +54,7 @@ module.exports = (grunt) ->
             tests:
                 files: [
                     expand: true
+                    nonull: true
                     cwd: '<%= jadeStylus.tests %>'
                     src: '**/*.html'
                     dest: '<%= jadeStylus.temp %>'
@@ -82,28 +90,34 @@ module.exports = (grunt) ->
         watch:
             jade:
                 files: [
-                    '<%= jadeStylus.mixins %>**/*.jade'
                     '<%= jadeStylus.tests %>}**/*.jade'
                     'index.jade'
                 ]
-                tasks: ['jade:tests', 'htmlmin:tests', 'jsbeautifier:tests']
+                tasks: ['newer:jade']
+            html:
+                files: [
+                    '<%= jadeStylus.temp %>}**/*.html'
+                ]
+                tasks: ['html5compare']
 
     grunt.registerTask 'default', [
-        'coffeelint'
-        'coffee'
-        'jshint'
+        #'clean'
+        'newer:coffeelint'
+        'newer:coffee'
+        'newer:jshint'
         'test'
     ]
 
     grunt.registerTask 'dev', [
-        'coffeelint'
-        'coffee'
-        'jshint'
-        'jade:tests'
+        'newer:coffeelint'
+        'newer:coffee'
+        'newer:jshint'
+        'newer:jade'
         'watch:jade'
     ]
 
     grunt.registerTask 'test', [
-        'jade:tests'
-        'html5compare:tests'
+        #'clean'
+        'newer:jade'
+        'html5compare'
     ]
