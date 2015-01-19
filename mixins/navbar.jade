@@ -35,15 +35,15 @@
 - }
 
 mixin divider
-    +li.divider(attributes=attributes)
+    +li.divider&attributes(attributes)
         block
 
 mixin dropdown
-    +li.dropdown(attributes=attributes)
+    +li.dropdown&attributes(attributes)
         block
 
 mixin dropdown-header
-    +li.dropdown-header(attributes=attributes)
+    +li.dropdown-header&attributes(attributes)
         block
 
 mixin dropdown-menu
@@ -52,22 +52,22 @@ mixin dropdown-menu
 
 mixin dropdown-toggle
     - attributes['data-toggle'] = attributes['data-toggle'] || 'dropdown'
-    +a.dropdown-toggle(attributes=attributes)
+    +a.dropdown-toggle&attributes(attributes)
         block
 
 mixin icon-bar
-    +span.icon-bar(attributes=attributes)
+    +span.icon-bar&attributes(attributes)
         block
 
 mixin navbar
     - _navbarOption(attributes)
     - _navbarPosition(attributes)
     - attributes.role = attributes.role || 'navigation'
-    .navbar(attributes=attributes)
+    .navbar&attributes(attributes)
         block
 
 mixin navbar-brand
-    +a.navbar-brand(attributes=attributes)
+    +a.navbar-brand&attributes(attributes)
         block
 
 mixin navbar-collapse
@@ -81,7 +81,7 @@ mixin navbar-header
 mixin navbar-toggle
     - attributes['data-target'] = attributes['data-target'] || '.navbar-collapse'
     - attributes['data-toggle'] = attributes['data-toggle'] || 'collapse'
-    +button.navbar-toggle(attributes=attributes)
+    +button.navbar-toggle&attributes(attributes)
         +span()(sr-only)
             | Toggle navigation
         +icon-bar

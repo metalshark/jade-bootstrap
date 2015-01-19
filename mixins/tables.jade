@@ -31,24 +31,24 @@ mixin table
     - if (attributes.responsive) {
         - attributes.responsive = null
         .table-responsive
-            table.table(attributes=attributes)
+            table.table&attributes(attributes)
                 block
     - } else {
-        table.table(attributes=attributes)
+        table.table&attributes(attributes)
             block
     - }
 
 mixin td
     - _contextualMeta(attributes)
-    td(attributes=attributes)
+    td&attributes(attributes)
         block
 
 mixin th
     - _contextualMeta(attributes)
-    th(attributes=attributes)
+    th&attributes(attributes)
         block
 
 mixin tr
     - _contextualMeta(attributes)
-    tr(attributes=attributes)
+    tr&attributes(attributes)
         block

@@ -10,5 +10,5 @@
 mixin doctype
     - attributes.lang = attributes.lang || 'en'
     doctype html
-    html(attributes=attributes)
+    html&attributes(attributes)
         block

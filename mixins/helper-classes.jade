@@ -8,12 +8,12 @@
 //- http://getbootstrap.com/css/#helper-classes
 
 mixin center-block
-    .center-block(attributes=attributes)
+    .center-block&attributes(attributes)
         block
 
 mixin clearfix
     - _responsiveMeta(attributes)
-    .clearfix(attributes=attributes)
+    .clearfix&attributes(attributes)
         block
 
 mixin close
@@ -21,17 +21,17 @@ mixin close
         | &times;
 
 mixin hidden
-    .hidden(attributes=attributes)
+    .hidden&attributes(attributes)
         block
 
 mixin pull-left
-    .pull-left(attributes=attributes)
+    .pull-left&attributes(attributes)
         block
 
 mixin pull-right
-    .pull-right(attributes=attributes)
+    .pull-right&attributes(attributes)
         block
 
 mixin show
-    .show(attributes=attributes)
+    .show&attributes(attributes)
         block

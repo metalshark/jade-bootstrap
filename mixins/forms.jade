@@ -23,41 +23,41 @@ mixin checkbox
     .checkbox
         +label(noControlLabel=attributes.noControlLabel)
             - attributes.noControlLabel = null
-            +input(attributes=attributes)
+            +input&attributes(attributes)
             block
 
 mixin checkbox-inline
     - attributes.type = attributes.type || 'checkbox'
     +label(class='checkbox-inline', noControlLabel=attributes.noControlLabel)
         - attributes.noControlLabel = null
-        +input(attributes=attributes)
+        +input&attributes(attributes)
         block
 
 mixin form
     - attributes.role = attributes.role || 'form'
     - _addClassAttribute('horizontal', 'form-horizontal', attributes)
     - _addClassAttribute('inline', 'form-inline', attributes)
-    form(attributes=attributes)
+    form&attributes(attributes)
         block
 
 mixin form-group
-    .form-group(attributes=attributes)
+    .form-group&attributes(attributes)
         block
 
 mixin form-static
-    p.form-control-static(attributes=attributes)
+    p.form-control-static&attributes(attributes)
         block
 
 mixin input
     - _inputMeta(attributes)
     - attributes.type = attributes.type || 'text'
-    input(attributes=attributes)
+    input&attributes(attributes)
 
 mixin label
     - _unlessClassAttribute('noControlLabel', 'control-label', attributes)
     - _addClassAttribute('inline', 'sr-only', attributes)
     - _colMeta(attributes)
-    label(attributes=attributes)
+    label&attributes(attributes)
         block
 
 mixin radio
@@ -65,15 +65,15 @@ mixin radio
     .radio
         +label()(noControlLabel=attributes.noControlLabel)
             - attributes.noControlLabel = null
-            +input(attributes=attributes)
+            +input&attributes(attributes)
             block
 
 mixin select
     - _inputMeta(attributes)
-    select(attributes=attributes)
+    select&attributes(attributes)
         block
 
 mixin textarea
     - _inputMeta(attributes)
-    textarea(attributes=attributes)
+    textarea&attributes(attributes)
         block

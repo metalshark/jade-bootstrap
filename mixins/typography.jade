@@ -90,142 +90,142 @@
 mixin a
     - _textMeta(attributes)
     - attributes.href = attributes.href || '#'
-    a(attributes=attributes)
+    a&attributes(attributes)
         block
 
 mixin abbr
     - _textMeta(attributes)
     - _addClassAttribute('initialism', 'initialism', attributes)
-    abbr(attributes=attributes)
+    abbr&attributes(attributes)
         block
 
 mixin address
     - _textMeta(attributes)
-    address(attributes=attributes)
+    address&attributes(attributes)
         block
 
 mixin blockquote
     - _textMeta(attributes)
-    blockquote(attributes=attributes)
+    blockquote&attributes(attributes)
         block
 
 mixin b
     - _textMeta(attributes)
-    b(attributes=attributes)
+    b&attributes(attributes)
 
 mixin br
-    br(attributes=attributes)
+    br&attributes(attributes)
 
 mixin cite
     - _textMeta(attributes)
-    cite(attributes=attributes)
+    cite&attributes(attributes)
         block
 
 mixin dd
-    dd(attributes=attributes)
+    dd&attributes(attributes)
         block
 
 mixin div
     - _itemMeta(attributes)
     - _textMeta(attributes)
-    div(attributes=attributes)
+    div&attributes(attributes)
         block
 
 mixin dl
     - _descriptionMeta(attributes)
-    dl(attributes=attributes)
+    dl&attributes(attributes)
         block
 
 mixin dt
-    dt(attributes=attributes)
+    dt&attributes(attributes)
         block
 
 mixin em
     - _textMeta(attributes)
-    em(attributes=attributes)
+    em&attributes(attributes)
         block
 
 mixin footer
-    footer(attributes=attributes)
+    footer&attributes(attributes)
         block
 
 mixin h1
     - _textMeta(attributes)
     - _headingMeta(attributes)
-    h1(attributes=attributes)
+    h1&attributes(attributes)
         block
 
 mixin h2
     - _textMeta(attributes)
     - _headingMeta(attributes)
-    h2(attributes=attributes)
+    h2&attributes(attributes)
         block
 
 mixin h3
     - _textMeta(attributes)
     - _headingMeta(attributes)
-    h3(attributes=attributes)
+    h3&attributes(attributes)
         block
 
 mixin h4
     - _textMeta(attributes)
     - _headingMeta(attributes)
-    h4(attributes=attributes)
+    h4&attributes(attributes)
         block
 
 mixin h5
     - _textMeta(attributes)
     - _headingMeta(attributes)
-    h5(attributes=attributes)
+    h5&attributes(attributes)
         block
 
 mixin h6
     - _textMeta(attributes)
     - _headingMeta(attributes)
-    h6(attributes=attributes)
+    h6&attributes(attributes)
         block
 
 mixin hr
-    hr(attributes=attributes)
+    hr&attributes(attributes)
         block
 
 mixin lead
     - _textMeta(attributes)
     - attributes.class = (attributes.class === undefined) ? 'lead' : attributes.class + ' ' + 'lead'
-    +p(attributes=attributes)
+    +p&attributes(attributes)
         block
 
 mixin li
     - _itemMeta(attributes)
-    li(attributes=attributes)
+    li&attributes(attributes)
         block
 
 mixin ol
     - _listMeta(attributes)
-    ol(attributes=attributes)
+    ol&attributes(attributes)
         block
 
 mixin p
     - _textMeta(attributes)
-    p(attributes=attributes)
+    p&attributes(attributes)
         block
 
 mixin small
     - _textMeta(attributes)
-    small(attributes=attributes)
+    small&attributes(attributes)
         block
 
 mixin span
     - _textMeta(attributes)
-    span(attributes=attributes)
+    span&attributes(attributes)
         block
 
 mixin strong
     - _textMeta(attributes)
-    strong(attributes=attributes)
+    strong&attributes(attributes)
         block
 
 mixin ul
     - _listMeta(attributes)
-    ul(attributes=attributes)
+    ul&attributes(attributes)
         block

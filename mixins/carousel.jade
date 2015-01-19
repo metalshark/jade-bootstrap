@@ -57,9 +57,9 @@ mixin carousel
 
 mixin carousel-caption
     - _addClassAttribute('active', 'active', attributes)
-    +div.carousel-caption(attributes=attributes)
+    +div.carousel-caption&attributes(attributes)
         block
 
 mixin carousel-item
-    +div.item(attributes=attributes)
+    +div.item&attributes(attributes)
         block
