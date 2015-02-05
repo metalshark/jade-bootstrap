@@ -1,0 +1,12 @@
+//- progress bar
+
+//- options:
+//-   - striped => give it strips
+//-   - active/animated => make it move
+mixin progress(percent)
+	- _addClassAttribute('striped', 'progress-bar-striped', attributes)
+	- _addClassAttribute('animated', 'active', attributes)
+	- _addClassAttribute('active', 'active', attributes)
+	.progress
+		.progress-bar(style='width:'+(percent || 0)+'%', role="progressbar", aria-valuenow=percent, aria-valuemin="0" aria-valuemax="100")&attributes(attributes)
+			span.sr-only= percent+"% complete"
