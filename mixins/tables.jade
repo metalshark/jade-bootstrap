@@ -39,11 +39,13 @@ mixin table
     - }
 
 mixin td
+    - _textAlignment(attributes)
     - _contextualMeta(attributes)
     td&attributes(attributes)
         block
 
 mixin th
+    - _textAlignment(attributes)
     - _contextualMeta(attributes)
     th&attributes(attributes)
         block
