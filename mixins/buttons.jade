@@ -54,6 +54,12 @@
 -     _btnSize(attributes)
 - }
 
+mixin buttons
+    - _addClassAttribute('right', 'pull-right', attributes)
+    - _addClassAttribute('left', 'pull-left', attributes)
+    .btn-group&attributes(attributes)
+        block
+
 mixin button
     - attributes.type = attributes.type || 'button'
     button&attributes(attributes)
