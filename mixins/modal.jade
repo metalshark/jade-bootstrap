@@ -1,0 +1,29 @@
+//- dialog
+
+mixin modal
+	.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')&attributes(attributes)
+		.modal-dialog
+			.modal-content
+				block
+
+mixin modal-header(title)
+	.modal-header
+		if attributes.close !== false
+			button(type='button', class='close', data-dismiss='modal', aria-hidden='true') ×
+		h3.modal-title= title
+
+mixin modal-body
+	.modal-body
+		block
+
+mixin modal-footer
+	.modal-footer
+		if block
+			block
+		
+		else
+			+modal-dismiss-button
+
+mixin modal-dismiss-button(label)
+	- label = label || t('Close')
+	+btn(data-dismiss='modal', aria-hidden='true')= label

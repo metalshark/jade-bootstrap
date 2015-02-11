@@ -21,10 +21,11 @@
 - }
 
 mixin col
+    - _textAlignment(attributes)
     - _colMeta(attributes)
-    div(attributes=attributes)
+    div&attributes(attributes)
         block
 
 mixin row
-    .row(attributes=attributes)
+    .row&attributes(attributes)
         block

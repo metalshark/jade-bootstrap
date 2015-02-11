@@ -54,9 +54,15 @@
 -     _btnSize(attributes)
 - }
 
+mixin buttons
+    - _addClassAttribute('right', 'pull-right', attributes)
+    - _addClassAttribute('left', 'pull-left', attributes)
+    .btn-group&attributes(attributes)
+        block
+
 mixin button
     - attributes.type = attributes.type || 'button'
-    button(attributes=attributes)
+    button&attributes(attributes)
         block
 
 mixin abtn
@@ -64,16 +70,16 @@ mixin abtn
     - _addClassAttribute('disabled', 'disabled', attributes)
     - attributes.href = attributes.href || '#'
     - attributes.role = attributes.role || 'button'
-    a.btn(attributes=attributes)
+    a.btn&attributes(attributes)
         block
 
 mixin btn
     - _btnMeta(attributes)
     - attributes.type = attributes.type || 'button'
-    +button.btn(attributes=attributes)
+    +button.btn&attributes(attributes)
         block
 
 mixin ibtn
     - _btnMeta(attributes)
     - attributes.type = attributes.type || 'button'
-    input.btn(attributes=attributes)
+    input.btn&attributes(attributes)

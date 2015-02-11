@@ -1,4 +1,4 @@
 jade-bootstrap
 ==============
 
-Jade mixins for creating bootstrap markup.
+This is a collection of Jade mixins to aid in creating Jade based Bootstrap markup, it also includes the default bootstrap template examples Jadeified!
